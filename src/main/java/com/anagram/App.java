@@ -23,11 +23,9 @@ public class App {
     if (file.length() == 0)
       throw new IllegalArgumentException("Empty file specified");
     System.out.println("Welcome to the Anagram Finder");
-    for (int i = 0; i < 40; i++) {
       FileParser fileParser = new FileParser();
       ConcurrentMap<String, ArrayList<String>> dictionaryMap = fileParser.loadToMap(Paths.get(args[0]));
       readInput(dictionaryMap);
-    }
   }
 
   private static void readInput(ConcurrentMap<String, ArrayList<String>> dictionaryMap) {
